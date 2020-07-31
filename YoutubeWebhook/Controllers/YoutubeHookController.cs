@@ -44,7 +44,7 @@ namespace YoutubeWebhook.Controllers
 
         [HttpGet]
         [Route("unsubscribe")]
-        public async Task<HttpResponseMessage> Unsubscribe(string channelId, string chatId = "")
+        public async Task<HttpResponseMessage> Unsubscribe(string channelId)
         {
             try
             {
@@ -71,7 +71,6 @@ namespace YoutubeWebhook.Controllers
             {
                 challenge = "OK";
 
-                // Конвертируем присланный Ютубом XML в Объект
                 YoutubeNotification notification = _hookYoutube.NotificationChannelCallback(Request);
 
                 if (notification == null || !notification.IsNewVideo)

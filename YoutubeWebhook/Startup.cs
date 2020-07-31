@@ -22,7 +22,6 @@ namespace YoutubeWebhook
             services.AddControllers();
             services.AddSwaggerGen();
             services.AddHttpClient<IWebHookYoutube, ImplementationSubscribe>();
-            services.AddHttpClient<INotificationTelegram, TelegramNotification>();
             services.AddSingleton((instance) =>
             {
                 return new YoutubeRequestData()
