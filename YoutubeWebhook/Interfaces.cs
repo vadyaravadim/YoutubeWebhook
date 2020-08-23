@@ -14,9 +14,4 @@ namespace YoutubeWebhook.Interfaces
         YoutubeNotification ConvertAtomToSyndication(Stream stream);
         string GetElementExtensionValueByOuterName(SyndicationItem item, string outerName);
     }
-
-    public interface INotificationTelegram
-    {
-        Task NotifyChannelAsync(YoutubeNotification notification, string urlToNotify);
-    }
 }
